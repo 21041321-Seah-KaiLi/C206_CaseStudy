@@ -95,6 +95,18 @@ public class UseraccountTest {
 		Memberapp.addMember(memberList, newuser2);
 		Memberapp.addMember(memberList, newuser3);
 		assertEquals("Test that MemberList arraylist size is 3?", 3, memberList.size());
+		
+		//After removing an member, then test the size of the list becomes 2
+		memberList.remove(0);
+		assertEquals(2, memberList.size());
+				
+		//Remove another member, then test the size of the list becomes 1
+		memberList.remove(0);
+		assertEquals(1, memberList.size());
+		
+		//Remove another member, then test the list is empty
+		memberList.remove(0);
+		assertEquals(0, memberList.size());
 	}
 
 
