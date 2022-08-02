@@ -169,10 +169,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if that User arraylist size is 1?", 1, userList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that User is added same as 1st item of the list?", u2, userList.get(0));
+		assertSame("Test that User is added same as 1st item of the list?", u1, userList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		C206_CaseStudy.addUser(userList, u1);
 		C206_CaseStudy.addUser(userList, u2);
 		assertEquals("Test that User arraylist size is 2?", 2, userList.size());
 		assertSame("Test that User is added same as 2nd item of the list?", u2, userList.get(1));
@@ -188,10 +187,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if that Category arraylist size is 1?", 1, catList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that Category is added same as 1st item of the list?", c2, catList.get(0));
+		assertSame("Test that Category is added same as 1st item of the list?", c1, catList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		C206_CaseStudy.addCategory(catList, c1);
 		C206_CaseStudy.addCategory(catList, c2);
 		assertEquals("Test that Category arraylist size is 2?", 2, catList.size());
 		assertSame("Test that Category is added same as 2nd item of the list?", c2, catList.get(1));
@@ -207,10 +205,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if that Item arraylist size is 1?", 1, itemList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that Item is added same as 1st item of the list?", i2, itemList.get(0));
+		assertSame("Test that Item is added same as 1st item of the list?", i1, itemList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		C206_CaseStudy.addItem(itemList, i1);
 		C206_CaseStudy.addItem(itemList, i2);
 		assertEquals("Test that Item arraylist size is 2?", 2, itemList.size());
 		assertSame("Test that Item is added same as 2nd item of the list?", i2, itemList.get(1));
@@ -226,10 +223,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if that Bid arraylist size is 1?", 1, bidList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that Bid is added same as 1st item of the list?", b2, bidList.get(0));
+		assertSame("Test that Bid is added same as 1st item of the list?", b1, bidList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		C206_CaseStudy.addBid(bidList, b1);
 		C206_CaseStudy.addBid(bidList, b2);
 		assertEquals("Test that Bid arraylist size is 2?", 2, bidList.size());
 		assertSame("Test that Bid is added same as 2nd item of the list?", b2, bidList.get(1));
@@ -245,10 +241,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if that Deal arraylist size is 1?", 1, dealList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that Deal is added same as 1st item of the list?", d2, dealList.get(0));
+		assertSame("Test that Deal is added same as 1st item of the list?", d1, dealList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		C206_CaseStudy.addDeal(dealList, d1);
 		C206_CaseStudy.addDeal(dealList, d2);
 		assertEquals("Test that Deal arraylist size is 2?", 2, dealList.size());
 		assertSame("Test that Deal is added same as 2nd item of the list?", d2, dealList.get(1));
