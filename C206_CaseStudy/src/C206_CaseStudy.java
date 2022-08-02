@@ -54,8 +54,8 @@ public class C206_CaseStudy {
 				int choice = Helper.readInt("Enter option to select object > ");
 				
 				if(choice == 1) {
-					User newuser = inputUser();
-					C206_CaseStudy.addUser(userList, newuser);
+					User newUser = inputUser();
+					C206_CaseStudy.addUser(userList, newUser);
 					System.out.println("User added");
 				}
 				else if (choice == 2) {
@@ -87,23 +87,18 @@ public class C206_CaseStudy {
 				
 				if(choice == 1) {
 					removeUser(userList);
-					System.out.println("User Removed");
 				}
 				else if (choice == 2) {
 					removeCategory(catList);
-					System.out.println("Category Removed");
 				}
 				else if (choice == 3) {
 					removeItem(itemList);
-					System.out.println("Item Removed");
 				}
 				else if (choice == 4) {
 					removeBid(bidList);
-					System.out.println("Bid Removed");
 				}
 				else if (choice == 5) {
 					removeDeal(dealList);
-					System.out.println("Deal Removed");
 				}
 			}
 			else if(option == OPTION_QUIT) {
@@ -275,8 +270,8 @@ public class C206_CaseStudy {
 		return newDeal;
 	}
 
-	public static void addUser(ArrayList<User> userList, User newuser) {
-		userList.add(newuser);
+	public static void addUser(ArrayList<User> userList, User newUser) {
+		userList.add(newUser);
 	}
 	
 	public static void addCategory(ArrayList<Category> catList, Category newCat) {
@@ -299,8 +294,9 @@ public class C206_CaseStudy {
 		
 		String userName = Helper.readString("Enter name : ");
 		for (int i = 0; i < userList.size(); i++) {
-			if (userList.get(i).getName().equals(userName)) {
+			if (userList.get(i).getName().equalsIgnoreCase(userName)) {
 				userList.remove(i);
+				System.out.println("User Removed");
 			}
 		}
 	}
@@ -309,8 +305,9 @@ public class C206_CaseStudy {
 		
 		String catName = Helper.readString("Enter Category : ");
 		for (int i = 0; i < catList.size(); i++) {
-			if (catList.get(i).getName().equals(catName)) {
+			if (catList.get(i).getName().equalsIgnoreCase(catName)) {
 				catList.remove(i);
+				System.out.println("Category Removed");
 			}
 		}
 	}
@@ -319,8 +316,9 @@ public class C206_CaseStudy {
 		
 		String itemName = Helper.readString("Enter item name : ");
 		for (int i = 0; i < itemList.size(); i++) {
-			if (itemList.get(i).getName().equals(itemName)) {
+			if (itemList.get(i).getName().equalsIgnoreCase(itemName)) {
 				itemList.remove(i);
+				System.out.println("Item Removed");
 			}
 		}
 	}
@@ -331,6 +329,7 @@ public class C206_CaseStudy {
 		for (int i = 0; i < bidList.size(); i++) {
 			if (bidList.get(i).getId() == bidID) {
 				bidList.remove(i);
+				System.out.println("Bid Removed");
 			}
 		}
 	}
@@ -341,6 +340,7 @@ public class C206_CaseStudy {
 		for (int i = 0; i < dealList.size(); i++) {
 			if (dealList.get(i).getID() == dealID) {
 				dealList.remove(i);
+				System.out.println("Deal Removed");
 			}
 		}
 	}
