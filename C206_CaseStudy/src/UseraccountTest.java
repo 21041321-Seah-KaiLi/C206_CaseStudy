@@ -23,20 +23,20 @@ import org.junit.Test;
  */
 public class UseraccountTest {
 
-	private Member newuser1;
-	private Member newuser2;
-	private Member newuser3;
+	private User newuser1;
+	private User newuser2;
+	private User newuser3;
 	
-	private ArrayList<Member> memberList;
+	private ArrayList<User> memberList;
 	
 	@Before
 	public void setUp() throws Exception {
 		
-		newuser1 = new Member("Dave", "Student", "Ken9010@gmail.com","zz09122");
-		newuser2 = new Member("zea", "Student", "zweaddw@gmail.com","wdwd9122");
-		newuser3 = new Member("ken", "Student", "kwddwk@gmail.com","zaceff");
+		newuser1 = new User("Dave", "Student", "Ken9010@gmail.com","zz09122");
+		newuser2 = new User("zea", "Student", "zweaddw@gmail.com","wdwd9122");
+		newuser3 = new User("ken", "Student", "kwddwk@gmail.com","zaceff");
 		
-		memberList = new ArrayList<Member>();
+		memberList = new ArrayList<User>();
 	}
 
 	

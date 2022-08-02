@@ -23,11 +23,11 @@ public class Memberapp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ArrayList<Member> memberList = new ArrayList<Member>();
+		ArrayList<User> memberList = new ArrayList<User>();
 		
-		memberList.add(new Member("Dave", "Student", "Ken9010@gmail.com","zz09122"));
-		memberList.add(new Member("zea", "Student", "zweaddw@gmail.com","wdwd9122"));
-		memberList.add(new Member("ken", "Student", "kwddwk@gmail.com","zaceff"));
+		memberList.add(new User("Dave", "Student", "Ken9010@gmail.com","zz09122"));
+		memberList.add(new User("zea", "Student", "zweaddw@gmail.com","wdwd9122"));
+		memberList.add(new User("ken", "Student", "kwddwk@gmail.com","zaceff"));
 		
 		int option = 3;
 		
@@ -39,7 +39,7 @@ public class Memberapp {
 			if (option == 1) {
 				
 				
-				Member newuser = inputMember();
+				User newuser = inputMember();
 				Memberapp.addMember(memberList, newuser);
 				System.out.println("User added");
 				
@@ -65,22 +65,22 @@ public class Memberapp {
 		System.out.println("3. Delete user");
 		Helper.line(80, "=");
 	}
-	public static Member inputMember() {
+	public static User inputMember() {
 		
 		String username = Helper.readString("Enter name : ");
 		String userrole = Helper.readString("Enter role : ");
 		String useremail = Helper.readString("Enter email : ");
 		String userpassword = Helper.readString("Enter password: ");
 		
-		Member newuser = new Member(username, userrole, useremail, userpassword);
+		User newuser = new User(username, userrole, useremail, userpassword);
 		return newuser;
 	}
 
-	public static void addMember(ArrayList<Member> memberList, Member newuser) {
+	public static void addMember(ArrayList<User> memberList, User newuser) {
 		memberList.add(newuser);
 	}
 	
-	public static String retrieveAllusers(ArrayList<Member> memberList) {
+	public static String retrieveAllusers(ArrayList<User> memberList) {
 		String output = "";
 		
 		for (int i = 0; i < memberList.size(); i++) {
@@ -91,13 +91,13 @@ public class Memberapp {
 		return output;
 	}
 	
-	public static void viewAllUser(ArrayList<Member> memberList) {
+	public static void viewAllUser(ArrayList<User> memberList) {
 		String output = String.format("%-15s %-10s %-25s %-10s\n", "Student", "Role", "Email","Password");
 		output += retrieveAllusers(memberList);
 		System.out.println(output);
 	}
 	
-	public static void removeMember(ArrayList<Member> memberList) {
+	public static void removeMember(ArrayList<User> memberList) {
 		
 		String useremail = Helper.readString("Enter email : ");
 		for (int i = 0; i < memberList.size(); i++) {

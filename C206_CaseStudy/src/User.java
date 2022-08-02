@@ -13,14 +13,14 @@
  * @author kd241
  *
  */
-public class Member {
+public class User {
 
 	private String name;
 	private String role;
 	private String email;
 	private String password;
 	
-	public Member(String name, String role, String email, String password) {
+	public User(String name, String role, String email, String password) {
 		super();
 		this.name = name;
 		this.role = role;
