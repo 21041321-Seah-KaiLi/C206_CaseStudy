@@ -36,9 +36,9 @@ public class C206_CaseStudyTest {
 		i1 = new Item("book1","textbook",0.1,"01/01/22","31/12/22",0.5);
 		i2 = new Item("book2","textbook",0.1,"01/01/22","31/12/22",0.5);
 		b1 = new Bid(1,"Test","sell@gmail.com","buy@gmail.com",5.0);
-		b1 = new Bid(1,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);
+		b1 = new Bid(2,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);
 		d1 = new Deal(1, "toy", "test@gmail.com", "test2@gmail.com", 0.0, "August 1st 2022");
-		d2 = new Deal(1, "toy2", "test3@gmail.com", "test4@gmail.com", 0.0, "August 1st 2022");
+		d2 = new Deal(2, "toy2", "test3@gmail.com", "test4@gmail.com", 0.0, "August 1st 2022");
 		
 		userList = new ArrayList<User>();
 		catList = new ArrayList<Category>();
@@ -133,7 +133,7 @@ public class C206_CaseStudyTest {
 		//Test if the expected output string same as the list of items retrieved from the Case study
 		allBids = C206_CaseStudy.retrieveAllBid(bidList);
 		testOutput = String.format("%-25d %-25s %-25s %-25s %-25.2f\n" , 1,"Test","sell@gmail.com","buy@gmail.com",5.0);
-		testOutput += String.format("%-25d %-25s %-25s %-25s %-25.2f\n", 1,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);	
+		testOutput += String.format("%-25d %-25s %-25s %-25s %-25.2f\n", 2,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);	
 		assertEquals("Test that ViewAllBidlist", testOutput, allBids);
 	}
 	
@@ -155,7 +155,7 @@ public class C206_CaseStudyTest {
 		//Test if the expected output string same as the list of items retrieved from the Case study
 		allDeals = C206_CaseStudy.retrieveAllDeal(dealList);
 		testOutput = String.format("%-25d %-25s %-25s %-25s %-25.2f %-25s\n" , 1, "toy", "test@gmail.com", "test2@gmail.com", 0.0, "August 1st 2022");
-		testOutput += String.format("%-25d %-25s %-25s %-25s %-25.2f %-25s\n", 1, "toy2", "test3@gmail.com", "test4@gmail.com", 0.0, "August 1st 2022");	
+		testOutput += String.format("%-25d %-25s %-25s %-25s %-25.2f %-25s\n", 2, "toy2", "test3@gmail.com", "test4@gmail.com", 0.0, "August 1st 2022");	
 		assertEquals("Test that ViewAllBidlist", testOutput, allDeals);
 	}
 	
@@ -247,6 +247,90 @@ public class C206_CaseStudyTest {
 		C206_CaseStudy.addDeal(dealList, d2);
 		assertEquals("Test that Deal arraylist size is 2?", 2, dealList.size());
 		assertSame("Test that Deal is added same as 2nd item of the list?", d2, dealList.get(1));
+	}
+	@Test
+	public void testRemoveUser() {
+		//Test if user list is not null but empty -boundary
+		assertNotNull("Test that there is valid userList to view",userList);
+		//test after adding 2 users, the size is 2
+		C206_CaseStudy.addUser(userList, u1);
+		C206_CaseStudy.addUser(userList, u2);
+		assertEquals("Test that User arraylist size is 2?", 2, userList.size());
+		//test after removing one user, size of arrayList is one
+		userList.remove(1);
+		assertEquals("Test that User arraylist size is 1?", 1, userList.size());
+		//test after removing one user, size of arrayList is zero
+		userList.remove(0);
+		assertEquals("Test that User arraylist size is 0?", 0, userList.size());
+		
+		
+		
+	}
+	@Test
+	public void testRemoveCategory() {
+		//test category list is not empty 
+		assertNotNull("Test category list is not empty ", catList);
+		//test after adding 2 category, the size is 2
+		C206_CaseStudy.addCategory(catList, c1);
+		C206_CaseStudy.addCategory(catList, c2);
+		assertEquals("Test that Category arraylist size is 2?", 2, catList.size());
+		//test after removing one Category, size of arrayList is one
+		catList.remove(1);
+		assertEquals("Test that Category arraylist size is 1?", 1, catList.size());
+		//test after removing one Category, size of arrayList is zero
+		catList.remove(0);
+		assertEquals("Test that Category arraylist size is 0?", 0, catList.size());
+				
+	}
+	@Test
+	public void testRemoveItem() {
+		//test after adding 2 category, the size is 2
+		C206_CaseStudy.addItem(itemList, i1);
+		C206_CaseStudy.addItem(itemList, i2);
+		assertEquals("Test that Item arraylist size is 2?", 2, itemList.size());
+		//test after removing one Item, size of arrayList is one
+		itemList.remove(1);
+		assertEquals("Test that item arraylist size is 1?", 1, itemList.size());
+		//test after removing one Category, size of arrayList is zero
+		itemList.remove(0);
+		assertEquals("Test that item arraylist size is 0?", 0, itemList.size());
+		
+	}
+	
+	@Test
+	public void testRemoveBid() {
+		//test Bid list is not empty
+		assertNotNull ("Test Bidding List is not empty ", bidList);
+		//test after adding 2 bids, the size is 2
+		C206_CaseStudy.addBid(bidList, b1);
+		C206_CaseStudy.addBid(bidList, b2);
+		assertEquals("Test that bid arraylist size is 2?", 2, bidList.size());
+		//test after removing one bid, size of arrayList is one
+		bidList.remove(1);
+		assertEquals("Test that bid arraylist size is 1?", 1, bidList.size());
+		//test after removing one bid, size of arrayList is zero
+		bidList.remove(0);
+		assertEquals("Test that bid arraylist size is 0?", 0, bidList.size());
+		
+		
+	
+
+	}
+	
+	@Test
+	public void testRemoveDeal() {
+		// item list is not empty, so that we can remove item
+		assertNotNull("Test that dealList is not empty", dealList );
+		//test after adding 2 category, the size is 2
+		C206_CaseStudy.addDeal(dealList, d1);
+		C206_CaseStudy.addDeal(dealList, d2);
+		assertEquals("Test that deal arraylist size is 2?", 2, dealList.size());
+		//test after removing one deal, size of arrayList is one
+		dealList.remove(1);
+		assertEquals("Test that deal arraylist size is 1?", 1, dealList.size());
+		//test after removing one deal, size of arrayList is zero
+		dealList.remove(0);
+		assertEquals("Test that deal arraylist size is 0?", 0, dealList.size());
 	}
 	
 	@After
