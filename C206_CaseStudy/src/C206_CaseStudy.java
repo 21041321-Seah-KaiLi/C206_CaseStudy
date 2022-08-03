@@ -156,7 +156,7 @@ public class C206_CaseStudy {
 		for(int i = 0; i < itemList.size(); i++) {
 			output += String.format("%-25s %-25s %-25.2f %-25s %-25s %-25.2f\n", itemList.get(i).getName(), 
 					itemList.get(i).getDescription(), itemList.get(i).getMinBidPrice(), itemList.get(i).getAuctionStart(),
-					itemList.get(i).getEndDate());
+					itemList.get(i).getEndDate(), itemList.get(i).getBidIncrement());
 		}
 		return output;
 	}
