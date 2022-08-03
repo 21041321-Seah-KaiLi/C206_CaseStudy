@@ -36,7 +36,7 @@ public class C206_CaseStudyTest {
 		i1 = new Item("book1","textbook",0.1,"01/01/22","31/12/22",0.5);
 		i2 = new Item("book2","textbook",0.1,"01/01/22","31/12/22",0.5);
 		b1 = new Bid(1,"Test","sell@gmail.com","buy@gmail.com",5.0);
-		b1 = new Bid(2,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);
+		b2 = new Bid(2,"Test2","sell2@gmail.com","buy2@gmail.com",5.0);
 		d1 = new Deal(1, "toy", "test@gmail.com", "test2@gmail.com", 0.0, "August 1st 2022");
 		d2 = new Deal(2, "toy2", "test3@gmail.com", "test4@gmail.com", 0.0, "August 1st 2022");
 		
@@ -123,7 +123,7 @@ public class C206_CaseStudyTest {
 		//Test if the list of items retrieved from the CaseStudy is empty - boundary
 		String allBids = C206_CaseStudy.retrieveAllBid(bidList);
 		String testOutput = "";
-		assertEquals("Check that ViewAllItemlist", testOutput, allBids);
+		assertEquals("Check that ViewAllBidlist", testOutput, allBids);
 				
 		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
 		C206_CaseStudy.addBid(bidList, b1);
