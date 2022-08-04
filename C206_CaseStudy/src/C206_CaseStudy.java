@@ -110,7 +110,7 @@ public class C206_CaseStudy {
 		}
 	}
 	public static void menu() {
-		C206_CaseStudy.setHeader("RESOURCE CENTRE APP");
+		C206_CaseStudy.setHeader("Campus Online Auction Shop");
 		System.out.println("1. View");
 		System.out.println("2. Add");
 		System.out.println("3. Delete");
